@@ -25,10 +25,10 @@ namespace Tyuiu.LeushinP.Sprint2.Task7.V10
             Console.WriteLine("***************************************************************************");
 
             Console.Write("Введите значение X: ");
-            double x = Convert.ToDouble(Console.ReadLine());
+            int x = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("Введите значение Y: ");
-            double y = Convert.ToDouble(Console.ReadLine());
+            int y = Convert.ToInt32(Console.ReadLine());
 
             bool[] result = ds.GetCompareOperations(x, y);
 
