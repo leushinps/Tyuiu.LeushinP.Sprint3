@@ -1,4 +1,4 @@
-using NUnit.Framework;
+
 using Tyuiu.LeushinP.Sprint2.Task0.V11.Lib;
 
 namespace Tyuiu.LeushinP.Sprint2.Task0.V11.Test
@@ -12,7 +12,6 @@ namespace Tyuiu.LeushinP.Sprint2.Task0.V11.Test
             DataService ds = new DataService();
             bool[] expected = { false, true, true, false, true, false };
             bool[] result = ds.GetCompareOperations(3, 5);
-
             Assert.AreEqual(expected, result);
         }
 
@@ -22,7 +21,6 @@ namespace Tyuiu.LeushinP.Sprint2.Task0.V11.Test
             DataService ds = new DataService();
             bool[] expected = { true, false, false, false, true, true };
             bool[] result = ds.GetCompareOperations(5, 5);
-
             Assert.AreEqual(expected, result);
         }
 
@@ -32,7 +30,6 @@ namespace Tyuiu.LeushinP.Sprint2.Task0.V11.Test
             DataService ds = new DataService();
             bool[] expected = { false, true, false, true, false, true };
             bool[] result = ds.GetCompareOperations(8, 4);
-
             Assert.AreEqual(expected, result);
         }
     }
