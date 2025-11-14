@@ -17,6 +17,7 @@ namespace Tyuiu.LeushinP.Sprint3.Task2.V6.Test
 
             double result = ds.GetMultiplySeries(a, startValue, stopValue);
 
+
             double expected = -0.074;
 
             Assert.AreEqual(expected, result, 0.001, "Произведение ряда вычислено неверно");

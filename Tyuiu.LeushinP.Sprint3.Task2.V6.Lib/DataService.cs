@@ -12,7 +12,6 @@ namespace Tyuiu.LeushinP.Sprint3.Task2.V6.Lib
 
             do
             {
-
                 double term = value + 1 / Math.Cos(4 * k);
                 multiply *= term;
                 k++;
