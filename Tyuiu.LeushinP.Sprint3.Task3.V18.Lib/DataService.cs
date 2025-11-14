@@ -11,8 +11,7 @@ namespace Tyuiu.LeushinP.Sprint3.Task3.V18.Lib
             if (value == null)
                 throw new ArgumentNullException(nameof(value));
 
-            var sb = new StringBuilder();
-
+            var sb = new StringBuilder(value.Length);
             foreach (char c in value)
             {
                 if (char.IsDigit(c))
@@ -20,7 +19,6 @@ namespace Tyuiu.LeushinP.Sprint3.Task3.V18.Lib
                 else
                     sb.Append(c);
             }
-
             return sb.ToString();
         }
     }
