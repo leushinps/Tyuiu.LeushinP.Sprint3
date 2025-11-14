@@ -1,22 +1,20 @@
 ﻿using System;
-using tyuiu.cources.programming.interfaces.Sprint2;
+using tyuiu.cources.programming.interfaces.Sprint3;
 
-namespace Tyuiu.LeushinP.Sprint2.Task0.V11.Lib
+namespace Tyuiu.LeushinP.Sprint3.Task0.V11.Lib
 {
-    public class DataService : ISprint2Task0V11
+    public class DataService : ISprint3Task0V11
     {
-        public bool[] GetCompareOperations(int x, int y)
+        public double GetSumSeries(int value, int startValue, int stopValue)
         {
-            bool[] results = new bool[6];
+            double sum = 0.0;
 
-            results[0] = x == y;
-            results[1] = x != y;
-            results[2] = x < y;   
-            results[3] = x > y;  
-            results[4] = x <= y;  
-            results[5] = x >= y;  
+            for (int k = startValue; k <= stopValue; k++)
+            {
+                sum += 1.0 / Math.Pow(k, value * 2);
+            }
 
-            return results;
+            return sum;
         }
     }
 }
