@@ -1,7 +1,7 @@
 ﻿using System;
-using Tyuiu.LeushinP.Sprint3.Task3.V20.Lib;
+using Tyuiu.LeushinP.Sprint3.Task4.V20.Lib;
 
-namespace Tyuiu.LeushinP.Sprint3.Task3.V20
+namespace Tyuiu.LeushinP.Sprint3.Task4.V20
 {
     class Program
     {
@@ -13,8 +13,8 @@ namespace Tyuiu.LeushinP.Sprint3.Task3.V20
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #3                                                               *");
             Console.WriteLine("* Тема: Использование оператороов Continue и  break                       *");
-            Console.WriteLine("* Задание #3                                                              *");
-            Console.WriteLine("* Вариант #18                                                             *");
+            Console.WriteLine("* Задание #4                                                              *");
+            Console.WriteLine("* Вариант #20                                                             *");
             Console.WriteLine("* Выполнил: Леушин Павел Сергеевич | Смартб-25-1                          *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");

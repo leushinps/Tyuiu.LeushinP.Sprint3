@@ -1,8 +1,8 @@
 using System;
 using NUnit.Framework;
-using Tyuiu.LeushinP.Sprint3.Task3.V20.Lib;
+using Tyuiu.LeushinP.Sprint3.Task4.V20.Lib;
 
-namespace Tyuiu.LeushinP.Sprint3.Task3.V20.Test
+namespace Tyuiu.LeushinP.Sprint3.Task4.V20.Test
 {
     [TestFixture]
     public class DataServiceTest

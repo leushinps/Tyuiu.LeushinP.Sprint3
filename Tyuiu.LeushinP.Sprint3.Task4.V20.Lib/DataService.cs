@@ -1,7 +1,7 @@
 ﻿using System;
 using tyuiu.cources.programming.interfaces.Sprint3;
 
-namespace Tyuiu.LeushinP.Sprint3.Task3.V20.Lib
+namespace Tyuiu.LeushinP.Sprint3.Task4.V20.Lib
 {
     public class DataService : ISprint3Task4V20
     {
