@@ -1,6 +1,5 @@
 ﻿using tyuiu.cources.programming.interfaces.Sprint3;
 
-usinusing tyuiu.cources.programming.interfaces.Sprint3;
 
 namespace Tyuiu.LeushinP.Sprint3.Task6.V15.Lib
 {
