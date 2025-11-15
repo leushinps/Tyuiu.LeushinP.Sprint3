@@ -20,13 +20,14 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5.Lib
                 }
                 else
                 {
+
                     double numerator = 2 * Math.PI * x;
                     double denominator = 3 * x + 12;
                     double term1 = numerator / denominator;
                     double term2 = Math.Cos(x);
-                    double term3 = 7 * x - 2;
+                    double term3 = 14 * x; 
 
-                    valueArray[count] = Math.Round(term1 + term2 + term3, 2);
+                    valueArray[count] = Math.Round(term1 + term2 - term3, 2);
                 }
                 count++;
             }

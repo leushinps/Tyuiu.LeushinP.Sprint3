@@ -19,7 +19,7 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Написать программу, которая выводит таблицу значений функции:          *");
-            Console.WriteLine("* F(x) = (2πx)/(3x+12) + cos(x) + 7x - 2                                 *");
+            Console.WriteLine("* F(x) = (2πx)/(3x+12) + cos(x) - 14x                                    *");
             Console.WriteLine("* на диапазоне [-5; 5] с шагом 1. При делении на ноль вернуть 0.         *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
@@ -45,21 +45,20 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5
                     Console.WriteLine("|{0,5}     | {1,8:f2}  |", startValue + i, resultArray[i]);
                 }
 
-
                 Console.WriteLine("Массив значений:");
-                Console.Write("[");
                 for (int i = 0; i < resultArray.Length; i++)
                 {
                     Console.Write(resultArray[i].ToString("F2"));
                     if (i < resultArray.Length - 1)
                         Console.Write(", ");
                 }
-                Console.WriteLine("]");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Ошибка при вычислении: " + ex.Message);
             }
+
+            Console.WriteLine("***************************************************************************");
             Console.WriteLine("Для завершения нажмите любую клавишу...");
             Console.ReadKey();
         }

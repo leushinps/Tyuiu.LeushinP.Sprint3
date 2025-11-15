@@ -17,7 +17,6 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5.Test
 
             double[] result = ds.GetMassFunction(startValue, stopValue);
 
-
             Assert.AreEqual(11, result.Length, "Длина массива не соответствует ожидаемой");
 
 
@@ -36,28 +35,29 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5.Test
         {
             DataService ds = new DataService();
 
+
             int startValue = -5;
             int stopValue = -3;
 
             double[] result = ds.GetMassFunction(startValue, stopValue);
 
+
             Assert.AreEqual(0, result[1], 0.001, "При делении на ноль должно возвращаться 0");
         }
 
         [Test]
-        public void GetMassFunctionSingleValue()
+        public void GetMassFunctionCheckCalculation()
         {
             DataService ds = new DataService();
 
-            int startValue = 0;
-            int stopValue = 0;
+            int startValue = 1;
+            int stopValue = 1;
 
             double[] result = ds.GetMassFunction(startValue, stopValue);
 
-            double expected = Math.Round(-1.0, 2);
+            double expected = Math.Round((2 * Math.PI * 1) / (3 * 1 + 12) + Math.Cos(1) - 14 * 1, 2);
 
-            Assert.AreEqual(1, result.Length, "Должен быть один элемент");
-            Assert.AreEqual(expected, result[0], 0.001, "Неверное значение для x = 0");
+            Assert.AreEqual(expected, result[0], 0.001, "Неверное вычисление для x = 1");
         }
 
         [Test]
@@ -69,7 +69,6 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5.Test
             int stopValue = 1;
 
             double[] result = ds.GetMassFunction(startValue, stopValue);
-
 
             double value = result[0];
             double roundedValue = Math.Round(value, 2);
@@ -86,6 +85,7 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5.Test
             int stopValue = 2;
 
             double[] result = ds.GetMassFunction(startValue, stopValue);
+
 
             Assert.AreEqual(5, result.Length, "Неверное количество элементов в массиве");
         }
