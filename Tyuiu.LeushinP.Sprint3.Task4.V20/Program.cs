@@ -24,22 +24,20 @@ namespace Tyuiu.LeushinP.Sprint3.Task4.V20
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            int from = -5;
-            int to = 5;
 
-            try
-            {
-                double result = ds.Calculate(from, to);
-                Console.WriteLine($"Диапазон: x = {from}..{to}, пропустить x = 0");
-                Console.WriteLine($"Произведение значений функции = {result:R}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Ошибка при вычислении: " + ex.Message);
-            }
+            int startValue = -5;
+            int stopValue = 5;
 
-            Console.WriteLine("Для завершения нажмите любую клавишу...");
-            Console.ReadKey();
+            Console.WriteLine("Старт шага = " + startValue);
+            Console.WriteLine("Конец шага = " + stopValue);
+
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* Результат:                                                              *");
+            Console.WriteLine("***************************************************************************");
+
+            double res = Convert.ToDouble(ds.Calculate(startValue, stopValue));
+            Console.WriteLine(res);
+            Console.ReadLine();
         }
     }
 }

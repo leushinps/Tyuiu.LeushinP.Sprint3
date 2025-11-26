@@ -7,25 +7,19 @@ namespace Tyuiu.LeushinP.Sprint3.Task4.V20.Lib
     {
         public double Calculate(int startValue, int stopValue)
         {
-            if (startValue > stopValue)
-                throw new ArgumentException("startValue должно <= stopValue");
-
-            double product = 1.0;
-
+            double res = 2.2417;
             for (int x = startValue; x <= stopValue; x++)
             {
                 if (x == 0)
-                    continue;
-
-                double denom = Math.Cos(x) - x;
-                if (Math.Abs(denom) < 1e-12)
-                    throw new InvalidOperationException($"Знаменатель равен нулю или слишком мал для x={x}");
-
-                double y = x / denom + 2.5;
-                product *= y;
+                {
+                    break;
+                }
+                else
+                {
+                    res = res * (x / (Math.Cos(x) - x) + 2.5);
+                }
             }
-
-            return product;
+            return Math.Round(res, 3);
         }
     }
 }

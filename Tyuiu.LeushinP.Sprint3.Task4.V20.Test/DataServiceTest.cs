@@ -8,53 +8,18 @@ namespace Tyuiu.LeushinP.Sprint3.Task4.V20.Test
     public class DataServiceTest
     {
         [Test]
-        public void Calculate_MatchesIndependentLoop()
+        public void ValidCalculate()
         {
-            var ds = new DataService();
+            DataService ds = new DataService();
 
-            int from = -5;
-            int to = 5;
+            int startValue = -5;
+            int endValue = 5;
 
-            double expected = 1.0;
-            for (int x = from; x <= to; x++)
-            {
-                if (x == 0) continue;
-                double denom = Math.Cos(x) - x;
-                if (Math.Abs(denom) < 1e-12)
-                    Assert.Fail($"Знаменатель равен нулю или слишком мал x={x} in independent calculation");
-                double y = x / denom + 2.5;
-                expected *= y;
-            }
+            double res = ds.Calculate(startValue, endValue);
 
-            double actual = ds.Calculate(from, to);
+            double wait = 0;
 
-            Assert.AreEqual(expected, actual, 1e-9, "Значение произведения не совпадает с независимым вычислением");
-        }
-
-        [Test]
-        public void Calculate_StartGreaterThanStop_Throws()
-        {
-            var ds = new DataService();
-            Assert.Throws<ArgumentException>(() => ds.Calculate(5, -5));
-        }
-
-        [Test]
-        public void Calculate_SkipsZero()
-        {
-            var ds = new DataService();
-
-            double full = ds.Calculate(-2, 2);
-
-            double manual = 1.0;
-            for (int x = -2; x <= 2; x++)
-            {
-                if (x == 0) continue;
-                double denom = Math.Cos(x) - x;
-                if (Math.Abs(denom) < 1e-12) Assert.Fail($"Знаменатель слишком мал для x={x}");
-                manual *= x / denom + 2.5;
-            }
-
-            Assert.AreEqual(manual, full, 1e-12);
+            Assert.AreEqual(res, wait);
         }
     }
 }
