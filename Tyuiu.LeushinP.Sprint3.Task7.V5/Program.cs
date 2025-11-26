@@ -18,9 +18,9 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5
             Console.WriteLine("* Выполнил: Леушин Павел Сергеевич | Смартб-25-1                          *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Написать программу, которая выводит таблицу значений функции:          *");
-            Console.WriteLine("* F(x) = (2πx)/(3x+12) + cos(x) - 14x                                    *");
-            Console.WriteLine("* на диапазоне [-5; 5] с шагом 1. При делении на ноль вернуть 0.         *");
+            Console.WriteLine("* Написать программу, которая выводит таблицу значений функции:           *");
+            Console.WriteLine("* F(x) = (2πx)/(3x+12) + cos(x) - 14x                                     *");
+            Console.WriteLine("* на диапазоне [-5; 5] с шагом 1. При делении на ноль вернуть 0.          *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
@@ -28,38 +28,19 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5
             int startValue = -5;
             int stopValue = 5;
 
-            Console.WriteLine($"Начало диапазона: {startValue}");
-            Console.WriteLine($"Конец диапазона: {stopValue}");
-            Console.WriteLine("Шаг: 1");
+            double[] valueArray = ds.GetMassFunction(startValue, stopValue);
+            Console.WriteLine("+----------+----------+");
+            Console.WriteLine("|     X    |   f(x)   |");
+            Console.WriteLine("+----------+----------+");
 
-            try
+            int x = startValue;
+            foreach (double fx in valueArray)
             {
-                double[] resultArray = ds.GetMassFunction(startValue, stopValue);
-
-                Console.WriteLine("***************************************************************************");
-                Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
-                Console.WriteLine("***************************************************************************");
-
-                for (int i = 0; i < resultArray.Length; i++)
-                {
-                    Console.WriteLine("|{0,5}     | {1,8:f2}  |", startValue + i, resultArray[i]);
-                }
-
-                Console.WriteLine("Массив значений:");
-                for (int i = 0; i < resultArray.Length; i++)
-                {
-                    Console.Write(resultArray[i].ToString("F2"));
-                    if (i < resultArray.Length - 1)
-                        Console.Write(", ");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Ошибка при вычислении: " + ex.Message);
+                Console.WriteLine("|{0,7}  | {1,7:F2} |", x, fx);
+                x++;
             }
 
-            Console.WriteLine("***************************************************************************");
-            Console.WriteLine("Для завершения нажмите любую клавишу...");
+            Console.WriteLine("+----------+----------+");
             Console.ReadKey();
         }
     }

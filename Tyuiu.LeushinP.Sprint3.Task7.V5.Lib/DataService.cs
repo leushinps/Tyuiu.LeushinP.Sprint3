@@ -7,28 +7,25 @@ namespace Tyuiu.LeushinP.Sprint3.Task7.V5.Lib
     {
         public double[] GetMassFunction(int startValue, int stopValue)
         {
-            int length = stopValue - startValue + 1;
-            double[] valueArray = new double[length];
-
+            int len = stopValue - startValue + 1;
+            double[] valueArray = new double[len];
             int count = 0;
+
             for (int x = startValue; x <= stopValue; x++)
             {
+                double zanamen = 3 * x + 12;
+                double y;
 
-                if (3 * x + 12 == 0)
+                if (zanamen == 0)
                 {
-                    valueArray[count] = 0;
+                    y = 0;
                 }
                 else
                 {
-
-                    double numerator = 2 * Math.PI * x;
-                    double denominator = 3 * x + 12;
-                    double term1 = numerator / denominator;
-                    double term2 = Math.Cos(x);
-                    double term3 = 14 * x; 
-
-                    valueArray[count] = Math.Round(term1 + term2 - term3, 2);
+                    y = Math.Round(((2 * Math.PI * x) / zanamen) + Math.Cos(x) - 14 * x, 2);
                 }
+
+                valueArray[count] = y;
                 count++;
             }
 

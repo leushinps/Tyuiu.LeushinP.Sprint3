@@ -1,93 +1,35 @@
 using System;
 using NUnit.Framework;
 using Tyuiu.LeushinP.Sprint3.Task7.V5.Lib;
-
 namespace Tyuiu.LeushinP.Sprint3.Task7.V5.Test
 {
     [TestFixture]
-    public class DataServiceTest
+    public sealed class DataServiceTest
     {
         [Test]
         public void ValidGetMassFunction()
         {
             DataService ds = new DataService();
-
             int startValue = -5;
             int stopValue = 5;
-
-            double[] result = ds.GetMassFunction(startValue, stopValue);
-
-            Assert.AreEqual(11, result.Length, "Длина массива не соответствует ожидаемой");
-
-
-            Assert.AreEqual(0, result[1], 0.001, "При x = -4 должно быть 0");
-
-            foreach (double value in result)
-            {
-                string stringValue = value.ToString("F2");
-                double roundedValue = double.Parse(stringValue);
-                Assert.AreEqual(roundedValue, value, 0.001, $"Значение {value} не округлено до 2 знаков");
-            }
-        }
-
-        [Test]
-        public void GetMassFunctionDivisionByZero()
-        {
-            DataService ds = new DataService();
-
-
-            int startValue = -5;
-            int stopValue = -3;
-
-            double[] result = ds.GetMassFunction(startValue, stopValue);
-
-
-            Assert.AreEqual(0, result[1], 0.001, "При делении на ноль должно возвращаться 0");
-        }
-
-        [Test]
-        public void GetMassFunctionCheckCalculation()
-        {
-            DataService ds = new DataService();
-
-            int startValue = 1;
-            int stopValue = 1;
-
-            double[] result = ds.GetMassFunction(startValue, stopValue);
-
-            double expected = Math.Round((2 * Math.PI * 1) / (3 * 1 + 12) + Math.Cos(1) - 14 * 1, 2);
-
-            Assert.AreEqual(expected, result[0], 0.001, "Неверное вычисление для x = 1");
-        }
-
-        [Test]
-        public void GetMassFunctionRounding()
-        {
-            DataService ds = new DataService();
-
-            int startValue = 1;
-            int stopValue = 1;
-
-            double[] result = ds.GetMassFunction(startValue, stopValue);
-
-            double value = result[0];
-            double roundedValue = Math.Round(value, 2);
-
-            Assert.AreEqual(roundedValue, value, 0.001, "Значение не округлено до 2 знаков после запятой");
-        }
-
-        [Test]
-        public void GetMassFunctionRange()
-        {
-            DataService ds = new DataService();
-
-            int startValue = -2;
-            int stopValue = 2;
-
-            double[] result = ds.GetMassFunction(startValue, stopValue);
-
-
-            Assert.AreEqual(5, result.Length, "Неверное количество элементов в массиве");
+            int len = stopValue - startValue + 1;
+            double[] valueWaitArray;
+            valueWaitArray = new double[len];
+            valueWaitArray[0] = 70.14;
+            valueWaitArray[1] = 55.21;
+            valueWaitArray[2] = 41.05;
+            valueWaitArray[3] = 27.96;
+            valueWaitArray[4] = 15.48;
+            valueWaitArray[5] = 1.0;
+            valueWaitArray[6] = -13.06;
+            valueWaitArray[7] = -28.16;
+            valueWaitArray[8] = -42.96;
+            valueWaitArray[9] = -56.77;
+            valueWaitArray[10] = -69.83;
+            double[] res;
+            res = new double[len];
+            res = ds.GetMassFunction(startValue, stopValue);
+            CollectionAssert.AreEqual(valueWaitArray, res);
         }
     }
 }
