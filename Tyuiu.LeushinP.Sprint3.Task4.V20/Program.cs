@@ -7,7 +7,7 @@ namespace Tyuiu.LeushinP.Sprint3.Task4.V20
     {
         static void Main(string[] args)
         {
-            var ds = new DataService();
+            DataService ds = new DataService();
 
             Console.Title = "Спринт #3 | Выполнил: Леушин П.С | Смартб-25-1";
             Console.WriteLine("***************************************************************************");
