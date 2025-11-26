@@ -1,11 +1,13 @@
+using System;
 using NUnit.Framework;
-using Tyuiu.AntonovVV.Sprint3.Task7.V5.Lib;
-namespace Tyuiu.AntonovVV.Sprint3.Task7.V5.Test
+using Tyuiu.LeushinP.Sprint3.Task7.V5.Lib;
+
+namespace Tyuiu.LeushinP.Sprint3.Task7.V5.Test
 {
-    [TestClass]
+    [TestFixture]
     public sealed class DataServiceTest
     {
-        [TestMethod]
+        [Test]
         public void ValidGetMassFunction()
         {
             DataService ds = new DataService();
