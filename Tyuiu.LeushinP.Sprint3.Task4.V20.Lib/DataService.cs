@@ -7,18 +7,21 @@ namespace Tyuiu.LeushinP.Sprint3.Task4.V20.Lib
     {
         public double Calculate(int startValue, int stopValue)
         {
-            double res = 2.2417;
+            double res = 1.0;
+
             for (int x = startValue; x <= stopValue; x++)
             {
-                if (x == 0)
+                if (x == 0) continue;
+
+                double expr = (Math.Cos(x) - x) + 2.5;
+
+                if (expr >= 0)
                 {
-                    break;
-                }
-                else
-                {
-                    res = res * (x / (Math.Cos(x) - x) + 2.5);
+                    double y = Math.Sqrt(expr);
+                    res *= y;
                 }
             }
+
             return Math.Round(res, 3);
         }
     }
