@@ -1,4 +1,9 @@
 ﻿using System;
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Tyuiu.LeushinP.Sprint3.Task5.V27.Lib;
 
 namespace Tyuiu.LeushinP.Sprint3.Task5.V27
@@ -25,32 +30,21 @@ namespace Tyuiu.LeushinP.Sprint3.Task5.V27
             Console.WriteLine("***************************************************************************");
 
             int x = 2;
-            int start1 = 1;
-            int stop1 = 3;
-            int start2 = 1;
-            int stop2 = 10;
+            int startValue1 = 1;
+            int stopValue1 = 3;
+            int startValue2 = 1;
+            int stopValue2 = 10;
+            Console.WriteLine("Переменная X = " + x);
+            Console.WriteLine("Старт шага первой суммы ряда = " + startValue1);
+            Console.WriteLine("Конец шага первой суммы ряда = " + stopValue1);
+            Console.WriteLine("Старт шага второй суммы ряда = " + startValue2);
+            Console.WriteLine("Конец шага второй суммы ряда = " + stopValue2);
 
-            Console.WriteLine($"Переменная X = {x}");
-            Console.WriteLine($"Старт шага i = {start1}");
-            Console.WriteLine($"Конец шага i = {stop1}");
-            Console.WriteLine($"Старт шага k = {start2}");
-            Console.WriteLine($"Конец шага k = {stop2}");
-
-            try
-            {
-                double result = ds.GetSumSumSeries(x, start1, start2, stop1, stop2);
-
-                Console.WriteLine("***************************************************************************");
-                Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
-                Console.WriteLine("***************************************************************************");
-                Console.WriteLine($"Сумма сумм ряда = {result}");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Ошибка при вычислении: " + ex.Message);
-            }
-            Console.WriteLine("Для завершения нажмите любую клавишу...");
-            Console.ReadKey();
+            Console.WriteLine("****************************************************************************");
+            Console.WriteLine("* РЕЗУЛЬТАТ:                                                               *");
+            Console.WriteLine("****************************************************************************");
+            Console.WriteLine("Сумма сумм ряда = " + ds.GetSumSumSeries(x, startValue1, startValue2, stopValue1, stopValue2));
+            Console.ReadLine();
         }
     }
 }
