@@ -1,9 +1,4 @@
 ﻿using System;
-
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tyuiu.LeushinP.Sprint3.Task5.V27.Lib;
 
 namespace Tyuiu.LeushinP.Sprint3.Task5.V27
@@ -24,15 +19,17 @@ namespace Tyuiu.LeushinP.Sprint3.Task5.V27
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Вычислить сумму сумм ряда по формуле при x=2                            *");
-            Console.WriteLine("* с диапазонами i=[1,3] и k=[1,10]                                       *");
+            Console.WriteLine("* с диапазонами i=[1,3] и k=[1,10]                                        *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
+
             int x = 2;
             int startValue1 = 1;
             int stopValue1 = 3;
             int startValue2 = 1;
             int stopValue2 = 10;
+
             Console.WriteLine("Переменная X = " + x);
             Console.WriteLine("Старт шага первой суммы ряда = " + startValue1);
             Console.WriteLine("Конец шага первой суммы ряда = " + stopValue1);
@@ -42,7 +39,10 @@ namespace Tyuiu.LeushinP.Sprint3.Task5.V27
             Console.WriteLine("****************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                               *");
             Console.WriteLine("****************************************************************************");
-            Console.WriteLine("Сумма сумм ряда = " + ds.GetSumSumSeries(x, startValue1, startValue2, stopValue1, stopValue2));
+
+            double result = ds.GetSumSumSeries(startValue1, startValue2, stopValue1, stopValue2);
+            Console.WriteLine("Сумма сумм ряда = " + result);
+
             Console.ReadLine();
         }
     }
