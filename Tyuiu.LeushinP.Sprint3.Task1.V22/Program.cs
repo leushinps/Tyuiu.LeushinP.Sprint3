@@ -23,24 +23,19 @@ namespace Tyuiu.LeushinP.Sprint3.Task1.V22
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-
             double a = 1.5;
-            int startValue = 1;
-            int stopValue = 20;
-
-            Console.WriteLine($"a = {a}");
-            Console.WriteLine($"startValue = {startValue}");
-            Console.WriteLine($"stopValue = {stopValue}");
-
-            double result = ds.GetSumSeries(a, startValue, stopValue);
+            Console.WriteLine("A = " + a);
+            Console.Write("Стартовое значение = ");
+            int Start = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Конечное значение = ");
+            int Stop = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            Console.WriteLine($"Сумма ряда = {result:F6}");
+            Console.WriteLine(ds.GetSumSeries(a, Start, Stop));
 
-            Console.WriteLine("Для завершения нажмите любую клавишу...");
             Console.ReadKey();
         }
     }
