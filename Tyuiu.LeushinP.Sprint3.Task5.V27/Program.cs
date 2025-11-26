@@ -28,7 +28,6 @@ namespace Tyuiu.LeushinP.Sprint3.Task5.V27
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
-
             int x = 2;
             int startValue1 = 1;
             int stopValue1 = 3;
