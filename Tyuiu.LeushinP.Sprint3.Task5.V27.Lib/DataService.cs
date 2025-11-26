@@ -11,14 +11,16 @@ namespace Tyuiu.LeushinP.Sprint3.Task5.V27.Lib
         public double GetSumSumSeries(int x, int startValue1, int startValue2, int stopValue1, int stopValue2)
         {
             double sumSeries = 0;
-            for (int i = startValue1; i <= stopValue1; i++)
+
+            for (int t = startValue1; t <= stopValue1; t++)
             {
                 for (int k = startValue2; k <= stopValue2; k++)
                 {
-                    sumSeries = sumSeries + (Math.Pow(k, x) / Math.Cos(k));
+                    sumSeries += Math.Pow(k, t) / Math.Cos(k);
                 }
             }
-            return (Math.Round(sumSeries, 3));
+
+            return Math.Round(sumSeries, 3);
         }
     }
 }
