@@ -24,15 +24,20 @@ namespace Tyuiu.LeushinP.Sprint3.Task3.V18
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            string input = "4n5nvf 56 bgy";
-            char replaceWith = 'n';
+            string str = "4n5nvf 56 bgy";
+            char replaceChr = 'n';
+            Console.WriteLine("Исходная строка: " + str);
+            Console.WriteLine("Заменить на букву: " + replaceChr);
 
-            Console.WriteLine($"Исходная строка: {input}");
-            string result = ds.ReplaceNumOnChar(input, replaceWith);
-            Console.WriteLine($"Преобразованная строка: {result}");
 
-            Console.WriteLine("Для завершения нажмите любую клавишу...");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
+            Console.WriteLine("***************************************************************************");
+
+            Console.WriteLine("Итоговая строка: " + ds.ReplaceNumOnChar(str, replaceChr));
+
             Console.ReadKey();
+
         }
     }
 }
